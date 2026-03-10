@@ -1,0 +1,132 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins, sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* HERO SECTION */
+
+.hero{
+
+height:320px;
+
+background:
+linear-gradient(to bottom,
+rgba(32,48,135,0.8),
+rgba(255,180,0,0.7)),
+url("about-bg.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+
+}
+
+/* ABOUT CARD */
+
+.about-card{
+
+background:white;
+padding:20px 40px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+}
+
+.about-card h1{
+
+color:#2b3d8f;
+font-size:32px;
+
+}
+
+/* ABOUT CONTENT */
+
+.about-container{
+
+max-width:900px;
+margin:60px auto;
+padding:20px;
+text-align:center;
+
+}
+
+.about-container h2{
+
+font-size:32px;
+margin-bottom:20px;
+color:#333;
+
+}
+
+.about-container span{
+
+color:#f4a300;
+
+}
+
+.about-container p{
+
+line-height:1.7;
+margin-bottom:20px;
+color:#444;
+
+}
+
+/* FEATURES */
+
+.features{
+
+background:white;
+padding:60px 20px;
+text-align:center;
+
+}
+
+.features h2{
+
+font-size:30px;
+margin-bottom:40px;
+
+}
+
+/* GRID */
+
+.feature-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+max-width:900px;
+margin:auto;
+
+}
+
+/* FEATURE BOX */
+
+.feature-box{
+
+background:#f7f7f7;
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+
+}
+
+.feature-box:hover{
+
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+
+
+}
