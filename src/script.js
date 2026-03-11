@@ -12,7 +12,7 @@ const loginPassword = document.querySelector("#loginPassword")
 
 const closeBtn = document.querySelector("#loginClose")
 
-
+consol.log("hi");
 const overlay = document.querySelector("#overlay");
 // Show overlay
 loginBtn.onclick = () => {
