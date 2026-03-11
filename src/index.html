@@ -71,15 +71,16 @@
                 </div>
             </div>
 
-            <button class="btnlogin-popup">Login</button>
+            <div id="log"> <button class="btnlogin-popup">Login</button></div>
 
         </nav>
 
     </header>
 
+    <div id="foldersContainer"></div>
 
     <div class="wrapper">
-        <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+        <span class="icon-close" id="loginClose"><ion-icon name="close-outline"></ion-icon></span>
 
         <!-- LOGIN FORM -->
 
@@ -180,7 +181,19 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <div class="folder-wrapper" id="folderWrapper">
+        <span class="icon-close" id="folderClose"><ion-icon name="close-outline"></ion-icon></span>
+        <div class="folder-form">
+            <h2>Create Folder</h2>
+            <h3>Folder Name</h3>
+            <input type="text" id="folderName" placeholder="Enter folder name" required>
+            <button class="btn" id="createBtn">Create</button>
+        </div>
+    </div>
+
+    <div id="fab" class="fab">+</div>
+
+    <script src="script.js?v=4"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 

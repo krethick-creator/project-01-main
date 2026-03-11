@@ -9,6 +9,9 @@ app.use(cors()); // allows all origins
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 //get api  route
+
+
+
 app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
@@ -63,7 +66,12 @@ app.post('/login', async (req, res) => {
       return res.status(401).send('invalid credentials');
     }
 
-    res.send('login successful');
+    res.json({
+      message: 'login successful',
+      username: user.username,
+      userEmail: user.name
+    });
+
   } catch (error) {
     console.error("Error during login:", error);
     res.status(500).send('Error during login');
