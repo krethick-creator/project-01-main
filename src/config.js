@@ -9,6 +9,10 @@ connect.then(() => {
     });
 
 const logschema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true

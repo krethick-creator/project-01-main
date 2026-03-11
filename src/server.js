@@ -20,11 +20,7 @@ app.get("/about", (req, res) => {
 
 
 
-/*app.get("/lo", (req, res) => {
-  // mongo or sql call
- 
-  res.send(productData)
-});*/
+
 
 
 app.post('/register', async (req, res) => {
@@ -39,6 +35,7 @@ app.post('/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
 
     const data = {
+      username: req.body.username,
       name: req.body.userEmail,
       password: hashedPassword
     };
