@@ -8,11 +8,12 @@ const loginForm = document.querySelector("#loginForm")
 const registerForm = document.querySelector("#registerForm")
 
 const togglePassword = document.querySelector(".toggle-password")
+const loginEmailEl = document.querySelector("#loginEmail")
 const loginPassword = document.querySelector("#loginPassword")
 
 const closeBtn = document.querySelector("#loginClose")
 
-consol.log("hi");
+
 const overlay = document.querySelector("#overlay");
 // Show overlay
 loginBtn.onclick = () => {
@@ -40,18 +41,20 @@ loginLink.onclick = () => {
 
 // show hide password
 
-togglePassword.onclick = () => {
+const toggleButtons = document.querySelectorAll(".toggle-password")
+toggleButtons.forEach(button => {
+    button.onclick = () => {
+        const passwordInput = button.closest(".input-box").querySelector("input[type='password'], input[type='text']")
 
-    if (loginPassword.type === "password") {
-        loginPassword.type = "text"
-        togglePassword.setAttribute("name", "eye-outline")
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text"
+            button.setAttribute("name", "eye-outline")
+        } else {
+            passwordInput.type = "password"
+            button.setAttribute("name", "eye-off-outline")
+        }
     }
-    else {
-        loginPassword.type = "password"
-        togglePassword.setAttribute("name", "eye-off-outline")
-    }
-
-}
+})
 
 
 // REGISTER USER
@@ -60,7 +63,7 @@ registerForm.addEventListener("submit", (e) => {
 
     e.preventDefault()
 
-    const username = document.querySelector("#registerusername").value
+    const username = document.querySelector("#registerUsername").value
     const email = document.querySelector("#registerEmail").value
     const password = document.querySelector("#registerPassword").value
 
@@ -93,15 +96,14 @@ registerForm.addEventListener("submit", (e) => {
 // LOGIN USER
 function login() {
 
-    console.log(" inside the buy product function");
-    //read the value
+    console.log("calling login()");
+    // read the value
+    const email = loginEmailEl ? loginEmailEl.value : '';
+    const password = loginPassword ? loginPassword.value : '';
+    console.log("login credentials", email, password);
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    console.log("value of the  quantity", username, password);
-
-    //validating the user input
-    if (!username || !password) {
+    // validating the user input
+    if (!email || !password) {
         alert("Invalid login")
         return;
     }
@@ -111,7 +113,7 @@ function login() {
         method: 'post',
         url: 'http://localhost:3232/login',
         data: {
-            userEmail: username,
+            userEmail: email,
             password: password
         }
     }).then(res => {

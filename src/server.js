@@ -15,10 +15,10 @@ app.use(express.json())
 app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index");
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 app.get("/about", (req, res) => {
-  res.sendFile(__dirname + "/about");
+  res.sendFile(path.join(__dirname, "about.html"));
 });
 
 
